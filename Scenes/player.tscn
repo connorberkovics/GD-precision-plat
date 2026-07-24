@@ -1,0 +1,30 @@
+[gd_scene format=3 uid="uid://xoepkl5hy7nl"]
+
+[ext_resource type="Script" uid="uid://dl5gdnh6jeg1p" path="res://Scripts/player.gd" id="1_cvnsp"]
+[ext_resource type="Texture2D" uid="uid://d1tsg6dvn3i1s" path="res://Assets/Sprites/Player.png" id="1_v0iea"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_dbrvp"]
+size = Vector2(16, 16)
+
+[node name="Player" type="CharacterBody2D" unique_id=1315796964]
+z_index = 10
+script = ExtResource("1_cvnsp")
+move_speed = 200.0
+jump_height = 50.0
+jump_time_to_apex = 0.3
+jump_time_to_fall = 0.25
+jump_release_modifier = 0.2
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=185382985]
+texture = ExtResource("1_v0iea")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=783939098]
+shape = SubResource("RectangleShape2D_dbrvp")
+
+[node name="CoyoteTimer" type="Timer" parent="." unique_id=690173835]
+wait_time = 0.2
+one_shot = true
+
+[node name="JumpBufferTimer" type="Timer" parent="." unique_id=1043960362]
+wait_time = 0.3
+one_shot = true
